@@ -1,0 +1,5 @@
+//NOTE -  Lexical Scope
+// 
+
+
+// NOTE - 
