@@ -18,4 +18,23 @@ function SumRange(num) {
   return num + SumRange(num - 1);
 }
 
-console.log(SumRange(10));
+// console.log(SumRange(10));
+
+// Factorial
+// syntax (4!) that would be 4 factorial
+// meaning 4 * 3 * 2 * 1
+function nonRecursiveFactorial(num) {
+  let total = 1;
+  for (let i = num; i > 1; i--) {
+    total *= i;
+  }
+  return total;
+}
+// console.log(nonRecursiveFactorial(4));
+
+function factorial(num) {
+  if (num === 1) return 1;
+  return num * factorial(num - 1);
+}
+
+console.log(factorial(4));
