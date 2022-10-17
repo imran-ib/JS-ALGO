@@ -1,5 +1,5 @@
 // Linear Search
-//NOTE - Date can be unsorted
+//NOTE - Data can be unsorted
 function linearSearch(arr, val) {
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === val) return i;
@@ -39,4 +39,20 @@ const arr = [
 ];
 const value = 10;
 
-console.log(binarySearch(arr, value));
+// console.log(binarySearch(arr, value));
+
+function NaiveStringSearch(strg, pttrn) {
+  let count = 0;
+  for (let i = 0; i < strg.length; i++) {
+    for (let j = 0; j < pttrn.length; j++) {
+      if (pttrn[j] !== strg[i + j]) {
+        break;
+      }
+      if (j === pttrn.length - 1) {
+        count++;
+      }
+    }
+  }
+  return count;
+}
+console.log(NaiveStringSearch("Hello How Are You Hello Hello", "Hello")); // 3
