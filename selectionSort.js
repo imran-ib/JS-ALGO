@@ -9,9 +9,11 @@ function SelectionSort(list) {
         min = j;
       }
     }
-    let temp = list[i];
-    list[i] = list[min];
-    list[min] = temp;
+    if (i !== min) {
+      let temp = list[i];
+      list[i] = list[min];
+      list[min] = temp;
+    }
   }
   return list;
 }
