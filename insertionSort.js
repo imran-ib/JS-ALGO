@@ -10,19 +10,5 @@ function InsertionSort(list) {
   return list;
 }
 
-function SelectionSortEloquent(list) {
-  list.forEach((value, index, list) => {
-    const lowest = Math.min(...list.slice(index));
-    const lowestIndex = list.indexOf(lowest);
-
-    if (list[index] > list[lowestIndex]) {
-      let temp = list[index];
-      list[index] = list[lowestIndex];
-      list[lowestIndex] = temp;
-    }
-  });
-  return list;
-}
-
 const list = [21, 343, 121, 43, 21, 545, 65, 324];
 console.log(InsertionSort(list));
