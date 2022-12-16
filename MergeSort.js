@@ -1,48 +1,3 @@
-// Colt Steel
-function Merge(list1, list2) {
-  let result = [];
-  let idx1 = 0;
-  let idx2 = 0;
-  while (idx1 < list1.length && idx2 < list2.length) {
-    if (list2[idx2] > list1[idx1]) {
-      result.push(list1[idx1]);
-      idx1++;
-    } else {
-      result.push(list2[idx2]);
-      idx2++;
-    }
-  }
-
-  while (idx1 < list1.length) {
-    result.push(list1[idx1]);
-    idx1++;
-  }
-
-  while (idx2 < list2.length) {
-    result.push(list2[idx2]);
-    idx2++;
-  }
-
-  return result;
-}
-
-// Merge([0,1,3,5,10] ,[2,4,6,7,8,9])
-
-function MergeSort(list) {
-  if (list.length <= 1) {
-    return list;
-  }
-  let mid = Math.floor(list.length / 2);
-  let right = MergeSort(list.slice(0, mid));
-  let left = MergeSort(list.slice(mid));
-  return Merge(left, right);
-}
-
-const List = [9, 8, 5, 7, 0, 6, 4, 1, 3, 2];
-console.log(MergeSort(List));
-
-// Stephen Grinder
-
 // We will write two function
 // MergeSort => its job is to break an array into smaller junks.
 // Merger => its job is to merge two sorted array into one array
@@ -98,3 +53,45 @@ function MergeSort(arr) {
 }
 
 MergeSort([9, 8, 7, 6, 5, 4, 3, 2, 1, 0]);
+
+function Merge(list1, list2) {
+  let result = [];
+  let idx1 = 0;
+  let idx2 = 0;
+  while (idx1 < list1.length && idx2 < list2.length) {
+    if (list2[idx2] > list1[idx1]) {
+      result.push(list1[idx1]);
+      idx1++;
+    } else {
+      result.push(list2[idx2]);
+      idx2++;
+    }
+  }
+
+  while (idx1 < list1.length) {
+    result.push(list1[idx1]);
+    idx1++;
+  }
+
+  while (idx2 < list2.length) {
+    result.push(list2[idx2]);
+    idx2++;
+  }
+
+  return result;
+}
+
+// Merge([0,1,3,5,10] ,[2,4,6,7,8,9])
+
+function MergeSort(list) {
+  if (list.length <= 1) {
+    return list;
+  }
+  let mid = Math.floor(list.length / 2);
+  let right = MergeSort(list.slice(0, mid));
+  let left = MergeSort(list.slice(mid));
+  return Merge(left, right);
+}
+
+const List = [9, 8, 5, 7, 0, 6, 4, 1, 3, 2];
+console.log(MergeSort(List));
